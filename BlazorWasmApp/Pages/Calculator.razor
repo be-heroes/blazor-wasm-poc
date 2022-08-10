@@ -1,0 +1,16 @@
+﻿@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+
+<h1>Calculator</h1>
+
+<input type="text" @bind="@_value" @oninput="@((e) => { _value=e.Value as int?;})" />
+<select @bind="@_sign">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+</select>
+<input type="text" @bind="@_sum" readonly />
+
+<button class="btn btn-primary" @onclick="Calculate">Calculate</button>
